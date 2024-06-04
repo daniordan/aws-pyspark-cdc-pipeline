@@ -1,5 +1,6 @@
 # Change Data Capture (CDC) / Replication On Going pipeline
 
+
 ## Requirement
 
 The end goal of this project is to have a fully functional CDC pipeline.
@@ -11,6 +12,7 @@ The pipeline will cover two phases:
 Initially, it will extract the full load - all data present inside the database - and load it in a temporary HDFS / AWS S3 bucket storage.
 Then, it will keep on looking for any changes made inside the source database and compensate that changes inside the destination storage. 
 The main essence is that it will create a data lake out of this database and any future changes in the database (insertion, deletion, updating, etc.).
+
 
 ## Architecture
 
@@ -28,3 +30,6 @@ As you can see in the architecture, there are a few things we need to set up the
 6. Lambda function with a configured trigger which will be invoked when a new data file lands in the Temp S3 bucket
 7. Glue PySpark job triggered by the Lambda function to process / transform the data and load / write it in the final destination S3 Bucket
 8. Final S3 Bucket for the final destination - data lake
+
+
+## Implementation
