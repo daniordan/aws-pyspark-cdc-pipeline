@@ -27,3 +27,4 @@ As you can see in the architecture, there are a few things we need to set up the
 5. DMS writes data to the Destination Endpoint - Temp S3 bucket
 6. Lambda function with a configured trigger which will be invoked when a new data file lands in the Temp S3 bucket
 7. Glue PySpark job triggered by the Lambda function to process / transform the data and load / write it in the final destination S3 Bucket
+8. Final S3 Bucket for the final destination - data lake
